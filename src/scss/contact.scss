@@ -1,0 +1,117 @@
+.contact__content {
+   display: flex;
+   justify-content: space-between;
+
+   @include media($screen-lg) {
+      flex-direction: column;
+   }
+}
+.container {
+   &__map {
+      width: 50vw;
+      height: 100%;
+
+      margin-left: calc(50% - 50vw);
+
+      @include media($screen-lg) {
+         width: 100vw;
+         height: 300px;
+
+         margin-left: calc(50% - 50vw);
+         margin-right: calc(50% - 50vw);
+         margin-bottom: 30px;
+      }
+   }
+   &__contact {
+      flex: 0 1 45%;
+
+      @include media($screen-lg) {
+         display: flex;
+         justify-content: space-between;
+      }
+      @include media($screen-sm) {
+         flex-direction: column;
+      }
+   }
+}
+#map {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.box {
+   &__address {
+      margin-bottom: 50px;
+      flex: 0 1 45%;
+   }
+   &__form {
+      flex: 0 1 50%;
+   }
+}
+.address {
+   &__street {
+      margin-bottom: 36px;
+   }
+}
+.street {
+   &__title {
+      display: block;
+      margin-bottom: 18px;
+
+      text-transform: uppercase;
+      font-weight: 700;
+   }
+   &__item {
+      display: block;
+
+      &:not(:last-child) {
+         margin-bottom: 5px;
+      }
+   }
+}
+.connection {
+   &__item {
+      &:not(:last-child) {
+         margin-bottom: 6px;
+      }
+   }
+   &__link {
+      font-weight: 700;
+      transition: 0.3s ease;
+
+      &:hover {
+         color: $brand-color;
+      }
+   }
+}
+
+.form__input {
+   margin-bottom: 20px;
+}
+label {
+   display: block;
+   margin-bottom: 10px;
+
+   font-size: $fs-sm;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+.input__field {
+   width: 100%;
+   padding: 0.6824rem;
+   font-size: $fs-sm;
+
+   transition: 0.2s ease;
+   border: solid 3px #e8e8e9;
+
+   &:focus {
+      border-color: $primary-color-dark;
+   }
+   &:valid {
+      border: 3px solid $brand-color;
+   }
+}
+textarea {
+   height: 182px;
+   resize: none;
+}

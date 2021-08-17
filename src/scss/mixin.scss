@@ -1,0 +1,71 @@
+/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
+
+@mixin сentering-xy() {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+@mixin pseudo($content: '') {
+   content: $content;
+   display: block;
+   position: absolute;
+}
+
+@mixin filter() {
+   content: '';
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: 0;
+   background: $brand-color;
+   opacity: 0.88;
+}
+
+/////////////////////////////////////////////MIXIN/////////////////////////////////////////////
+
+/////////////////////////////////////////////COLOR/////////////////////////////////////////////
+
+$primary-color-light: #fff;
+$primary-color-dark: #1e2123;
+$brand-color: #0c9aec;
+
+/////////////////////////////////////////////COLOR/////////////////////////////////////////////
+
+/////////////////////////////////////////////FONTS/////////////////////////////////////////////
+
+$font-main: 'Open Sans', sans-serif;
+
+$fs-main-m: 17px;
+$fs-main-s: 15px;
+
+$fs-xs: 0.6471rem; // 11px
+$fs-x-sm: 0.7647rem; // 13px;
+$fs-sm: 0.8824rem; // 15px;
+$fs-md: 0.9412rem; // 16px;
+$fs-x-md: 1.1176rem; // 19px;
+$fs-lg: 1.5882rem; // 27px;
+$fs-x-lg: 1.9412rem; // 33px;
+$fs-xl: 2.4118rem; // 41px;
+
+/////////////////////////////////////////////FONTS/////////////////////////////////////////////
+
+/////////////////////////////////////////////MEDIA/////////////////////////////////////////////
+
+@mixin media($media) {
+   @media only screen and (max-width: $media) {
+      @content;
+   }
+}
+
+$screen-xs: 500px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+/////////////////////////////////////////////MEDIA/////////////////////////////////////////////

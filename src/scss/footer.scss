@@ -1,0 +1,66 @@
+.footer {
+   position: relative;
+
+   padding: 225px 40px 20px;
+
+   background-color: $primary-color-light;
+
+   @include media($screen-lg) {
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+
+   &__nav {
+      justify-content: flex-end;
+
+      margin-bottom: 46px;
+      padding: 0;
+
+      &::before {
+         @include pseudo;
+         right: 0;
+         bottom: -26px;
+
+         width: 46px;
+         height: 8px;
+
+         background-color: $primary-color-dark;
+      }
+   }
+   &__menu {
+      li {
+         color: $brand-color;
+         font-weight: 800;
+         font-size: $fs-x-sm;
+
+         &:not(:last-child) {
+            margin-right: 20px;
+         }
+      }
+      a {
+         &::before {
+            color: $primary-color-dark;
+         }
+      }
+
+      @include media($screen-xs) {
+         flex-direction: column;
+         align-items: flex-end;
+
+         li {
+            &:not(:last-child) {
+               margin-right: 0;
+               margin-bottom: 15px;
+            }
+         }
+      }
+   }
+}
+.copyright {
+   text-align: right;
+   font-size: $fs-xs;
+
+   span {
+      font-weight: 700;
+   }
+}

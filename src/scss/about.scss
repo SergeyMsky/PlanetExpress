@@ -1,0 +1,148 @@
+.about {
+   &__img {
+      float: left;
+
+      width: 50vw;
+      height: 100%;
+      object-fit: cover;
+
+      margin-left: calc(50% - 50vw);
+      margin-right: 40px;
+      margin-bottom: 20px;
+
+      @include media($screen-sm) {
+         width: 100%;
+         margin-left: 0;
+         margin-right: 0;
+      }
+   }
+   &__content--bottom {
+      display: flex;
+      justify-content: space-between;
+
+      @include media($screen-md) {
+         flex-direction: column;
+      }
+   }
+}
+.content {
+   &__title {
+      margin-bottom: 30px;
+      font-size: $fs-x-lg;
+      text-transform: uppercase;
+
+      span:last-child {
+         font-weight: 800;
+      }
+   }
+   &__links {
+      margin-bottom: 20px;
+
+      a {
+         display: inline-block;
+         margin-right: 6px;
+         margin-bottom: 10px;
+      }
+   }
+   &__text {
+      flex: 0 1 45%;
+
+      p {
+         margin-bottom: 10px;
+         line-height: 1.47;
+      }
+   }
+   &__skills {
+      width: 50vw;
+      padding-right: 20px;
+
+      margin-top: 28px;
+      margin-right: calc(50% - 50vw);
+
+      @include media($screen-md) {
+         margin-right: 0;
+         width: 100%;
+      }
+   }
+}
+.skills {
+   &__title {
+      margin-bottom: 25px;
+
+      font-size: $fs-sm;
+      font-weight: 700;
+      text-transform: uppercase;
+   }
+   &__block {
+      margin-bottom: 15px;
+      text-transform: uppercase;
+   }
+}
+.block {
+   &__text {
+      display: block;
+      margin-bottom: 10px;
+
+      font-size: $fs-x-sm;
+   }
+   &__strip {
+      position: relative;
+      display: block;
+
+      width: 100%;
+      height: 11px;
+
+      background-color: #eee;
+
+      &::before {
+         @include pseudo;
+         top: 0;
+         left: 0;
+
+         height: 100%;
+
+         background-color: $brand-color;
+      }
+      .skills__block:nth-child(2) &::before {
+         width: 80%;
+      }
+      .skills__block:nth-child(3) &::before {
+         width: 66%;
+      }
+      .skills__block:nth-child(4) &::before {
+         width: 92%;
+      }
+      .skills__block:nth-child(5) &::before {
+         width: 38%;
+      }
+
+      &::after {
+         @include pseudo;
+         bottom: 11px;
+
+         padding: 0.3529rem 0.5882rem;
+
+         font-weight: 700;
+         font-size: $fs-xs;
+
+         background-color: $primary-color-dark;
+         color: $primary-color-light;
+      }
+      .skills__block:nth-child(2) &::after {
+         left: 80%;
+         content: '80%';
+      }
+      .skills__block:nth-child(3) &::after {
+         left: 66%;
+         content: '66%';
+      }
+      .skills__block:nth-child(4) &::after {
+         left: 92%;
+         content: '92%';
+      }
+      .skills__block:nth-child(5) &::after {
+         left: 38%;
+         content: '38%';
+      }
+   }
+}
